@@ -11,7 +11,11 @@ var db        = {};
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  var sequelize = new Sequelize(
+      config.database,
+      config.username,
+      config.password,
+      config);
 }
 
 fs
@@ -34,5 +38,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.train_stations = require('./train_stations')(sequelize,Sequelize);
+db.schedule_offline_storage = require('./schedule_offline_storage')(sequelize,Sequelize);
 
 module.exports = db;

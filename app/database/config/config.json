@@ -4,6 +4,7 @@
     "password": "1000",
     "database": "train_schedule_server",
     "host": "127.0.0.1",
+    "operatorsAliases": false,
     "dialect": "mysql"
   },
   "test": {
@@ -11,6 +12,7 @@
     "password": "1000",
     "database": "train_schedule_server",
     "host": "127.0.0.1",
+    "operatorsAliases": false,
     "dialect": "mysql"
   },
   "production": {
@@ -18,6 +20,7 @@
     "password": "1000",
     "database": "train_schedule_server",
     "host": "127.0.0.1",
+    "operatorsAliases": false,
     "dialect": "mysql"
   }
 }

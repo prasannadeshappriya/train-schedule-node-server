@@ -21,7 +21,7 @@ module.exports = {
         allowNull: false,
       },
       result_string: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(10000),
         allowNull: false,
       },
       createdAt: {

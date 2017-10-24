@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
+    "operatorsAliases": false,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
+    "operatorsAliases": false,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
+    "operatorsAliases": false,
+    "dialect": "mysql"
+  }
+}

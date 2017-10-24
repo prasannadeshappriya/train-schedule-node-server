@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "b9b26541774d4e",
-    "password": "93062084",
-    "database": "heroku_6336bf5ad0ee653",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
     "operatorsAliases": false,
     "dialect": "mysql"
   },
   "test": {
-    "username": "b9b26541774d4e",
-    "password": "93062084",
-    "database": "heroku_6336bf5ad0ee653",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
     "operatorsAliases": false,
     "dialect": "mysql"
   },
   "production": {
-    "username": "b9b26541774d4e",
-    "password": "93062084",
-    "database": "heroku_6336bf5ad0ee653",
-    "host": "us-cdbr-iron-east-05.cleardb.net",
+    "username": "train_schedule_user",
+    "password": "1000",
+    "database": "train_schedule_server",
+    "host": "127.0.0.1",
     "operatorsAliases": false,
     "dialect": "mysql"
   }

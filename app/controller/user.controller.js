@@ -37,8 +37,8 @@ module.exports = {
             end_time: end_time, date: date
         };
 
-        let respond = await trainScheduleRepository.getTrainSchedule(schedule, function(respond){
-            res.send(respond);
+        let respond = await trainScheduleRepository.getTrainSchedule(schedule, function(respond, isOnline){
+            res.status(200).json({online: isOnline, data: respond});
         });
 
     }

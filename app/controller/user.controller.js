@@ -4,9 +4,14 @@
 
 //Add repository files
 const trainScheduleRepository = require('../repository/train.schedule.repository');
-module.exports = {
-    getTrainSchedule: async function(req,res){
+const statisticsRepository = require('../repository/statistics.repository');
 
+module.exports = {
+    updateScheduleWebAppStats: async function(req,res){
+        await statisticsRepository.updateUserStatisticsTrainWebApp();
+        res.status(200);
+    },
+    getTrainSchedule: async function(req,res){
         //Check the query data existence
         if(typeof req.query==='undefined'){
             return res.status(400).json({message: 'query data is required'});}

@@ -39,5 +39,6 @@ db.Sequelize = Sequelize;
 
 db.train_stations = require('./train_stations')(sequelize,Sequelize);
 db.schedule_offline_storage = require('./schedule_offline_storage')(sequelize,Sequelize);
+db.user_stats = require('./user_stats')(sequelize,Sequelize);
 
 module.exports = db;

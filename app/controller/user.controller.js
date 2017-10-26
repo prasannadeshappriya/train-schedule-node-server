@@ -9,7 +9,6 @@ const statisticsRepository = require('../repository/statistics.repository');
 module.exports = {
     updateScheduleWebAppStats: async function(req,res){
         await statisticsRepository.updateUserStatisticsTrainWebApp();
-        res.Header().Add("Access-Control-Allow-Origin", "*");
         res.status(200);
     },
     getTrainSchedule: async function(req,res){
@@ -44,7 +43,6 @@ module.exports = {
         };
 
         let respond = await trainScheduleRepository.getTrainSchedule(schedule, function(respond, isOnline){
-            res.Header().Add("Access-Control-Allow-Origin", "*");
             res.status(200).json({online: isOnline, data: respond});
         });
 

@@ -44,6 +44,7 @@ module.exports = {
         };
 
         let respond = await trainScheduleRepository.getTrainSchedule(schedule, function(respond, isOnline){
+            res.Header().Add("Access-Control-Allow-Origin", "*");
             res.status(200).json({online: isOnline, data: respond});
         });
 

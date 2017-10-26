@@ -7,9 +7,17 @@ const trainScheduleRepository = require('../repository/train.schedule.repository
 const statisticsRepository = require('../repository/statistics.repository');
 
 module.exports = {
+    getTrainWebAppStat: async function(req,res){
+        let status = await statisticsRepository.getTrainWebAppStat();
+        if(status[0]){
+            res.status(200).json({count: status[1]});}
+        else{res.status(200).json({count: 0});}
+    },
     updateScheduleWebAppStats: async function(req,res){
-        await statisticsRepository.updateUserStatisticsTrainWebApp();
-        res.status(200);
+        let status = await statisticsRepository.updateUserStatisticsTrainWebApp();
+        if(status){
+            res.status(200).json({update: true});}
+        else{res.status(500).json({update: false, message: 'Cannot update statistics'});}
     },
     getTrainSchedule: async function(req,res){
         //Check the query data existence

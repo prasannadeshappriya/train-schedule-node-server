@@ -58,9 +58,9 @@ async function writeDataToOfflineStorage(dateId, schedule, result, callback){
 }
 
 module.exports = {
-    test : async function(schedule){
-        await getDayIdFromDate(schedule.date);
-    },//
+    getAllOfflineData: async function(){
+        return await trainScheduleModel.getTrainScheduleOfflineData();
+    },
     getTrainSchedule: async function(schedule, callback){
         //108 -> 246
         let start_station_item = await trainStationRepository.getTrainStation(schedule.start_station);
@@ -94,10 +94,6 @@ module.exports = {
                                 let item = trainScheduleTable[key];
                                 Object.keys(item)
                                     .forEach(async function (child_key) {
-                                        console.log('-------------');
-                                        console.log(child_key);
-                                        console.log(item[child_key]);
-                                        console.log('-------------');
                                         let super_item = item[child_key];
                                         if (super_item.hasOwnProperty('Your Station')) {
                                             if (super_item['Your Station'] !== "") {
@@ -108,12 +104,10 @@ module.exports = {
                                                 }
                                                 Object.keys(super_item)
                                                     .forEach(async function (super_child_key) {
-
                                                         super_item[super_child_key] =
                                                             super_item[super_child_key].replace(new RegExp('\t', 'g'), '');
                                                         super_item[super_child_key] =
                                                             super_item[super_child_key].replace(new RegExp('\r\n', 'g'), '');
-
                                                         if (isDetails) {
                                                             tmpObj[super_child_key]
                                                                 = super_item[super_child_key];
@@ -151,7 +145,7 @@ module.exports = {
                                     }
                                 }
                             });
-                        if(results.normal.length===0){
+                        if(results.normal.length===0 && results.connected.length===0){
                             await loadOfflineResults(dateId, schedule, async function (offlineResults) {
                                 try{
                                     if(offlineResults) {

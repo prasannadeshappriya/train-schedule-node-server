@@ -4,6 +4,11 @@
 const models = require('../database/models');
 
 module.exports = {
+    getTrainScheduleOfflineData: async function(){
+        return await models.schedule_offline_storage.findAll({
+            where: {}
+        })
+    },
     getTrainSchedule: async function(dateId, start_station_id, end_station_id){
         return await models.schedule_offline_storage.findOne({
             where: {

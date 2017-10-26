@@ -15,6 +15,9 @@ module.exports = {
             {return trainScheduleList[item];}
         }
         return null;
+    },
+    getAllTrainStation: async function(){
+        return await trainScheduleList;
     }
 };
 

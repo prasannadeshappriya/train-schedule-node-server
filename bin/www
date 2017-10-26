@@ -8,7 +8,6 @@ var app = require('../app');
 var debug = require('debug')('train-schedule-server:server');
 var http = require('http');
 var models = require('../app/database/models');
-const cors = require('cors');
 
 /**
  * Get port from environment and store in Express.

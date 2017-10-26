@@ -12,24 +12,24 @@ var cors = require('cors');
 
 var app = express();
 
-function corsHandler(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, ' +
-        'Content-Length, Content-MD5, Content-Type, Date, ' +
-        'X-Api-Version, X-Response-Time, X-PINGOTHER, ' +
-        'X-CSRF-Token,Authorization'
-    );
-    res.setHeader('Access-Control-Allow-Methods', '*');
-    res.setHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
-    res.setHeader('Access-Control-Max-Age', '1000');
-    return next();
-}
-function optionsRoute(req, res, next) {res.send(200);return next();}
-app.use(cors({
-    credentials: true,                 // defaults to false
-    methods: ['GET','PUT','DELETE','POST','OPTIONS']
-}));
-app.options('/\.*/', corsHandler, optionsRoute);
+// function corsHandler(req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, ' +
+//         'Content-Length, Content-MD5, Content-Type, Date, ' +
+//         'X-Api-Version, X-Response-Time, X-PINGOTHER, ' +
+//         'X-CSRF-Token,Authorization'
+//     );
+//     res.setHeader('Access-Control-Allow-Methods', '*');
+//     res.setHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
+//     res.setHeader('Access-Control-Max-Age', '1000');
+//     return next();
+// }
+// function optionsRoute(req, res, next) {res.send(200);return next();}
+// app.use(cors({
+//     credentials: true,                 // defaults to false
+//     methods: ['GET','PUT','DELETE','POST','OPTIONS']
+// }));
+// app.options('/\.*/', corsHandler, optionsRoute);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
